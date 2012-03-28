@@ -5,7 +5,6 @@ import popups
 import view
 import updater
 import util
-import winsound
 import socket
 from settings import settings
 
@@ -109,12 +108,8 @@ class Controller(object):
             self.play_sound()
     def play_sound(self):
         if settings.PLAY_SOUND:
-            path = settings.SOUND_PATH
-            flags = winsound.SND_FILENAME | winsound.SND_ASYNC
-            try:
-                winsound.PlaySound(path, flags)
-            except Exception:
-                pass
+            s = wx.Sound(settings.SOUND_PATH)
+            s.Play(flags=wx.SOUND_ASYNC)
     def show_popup(self):
         items = self.manager.items
         index = len(items) - 1

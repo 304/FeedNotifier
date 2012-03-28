@@ -56,7 +56,7 @@ sys.argv.append('py2exe')
 def get_data_files():
     def filter_files(files):
         def match(file):
-            extensions = ['.dat']
+            extensions = ['.dat', '.po']
             for extension in extensions:
                 if file.endswith(extension):
                     return True
@@ -72,6 +72,7 @@ def get_data_files():
     data_files += tree('./icons')
     data_files += tree('./sounds')
     data_files += tree('./Microsoft.VC90.CRT')
+    data_files += tree('./locale')    
     return data_files
     
 # Build the distribution.

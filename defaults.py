@@ -49,7 +49,7 @@ PROXY_URL = ''
 LOCAL_REVISION = load_revision()
 REVISION_URL = 'http://www.feednotifier.com/update/revision.txt'
 INSTALLER_URL = 'http://www.feednotifier.com/update/installer.exe'
-CHECK_FOR_UPDATES = True
+CHECK_FOR_UPDATES = False
 UPDATE_INTERVAL = 60 * 60 * 24 * 1
 UPDATE_TIMESTAMP = 0
 
